@@ -14,3 +14,13 @@ header i{
     width: 80%;     /* esto solo funciona para centrar cuamdo solo tenemos un padre y un hijo*/
     margin: 0 auto; /* esto solo funciona para centrar cuamdo solo tenemos un padre y un hijo*/
 }
+main{
+    display: flex;
+    flex-wrap: nowrap;
+}
+main aside{
+    width: 30%;
+}
+main section{
+    width: 70%;
+}

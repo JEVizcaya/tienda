@@ -28,7 +28,17 @@ if (isset($_SESSION["username"])) {
             <p><?php echo $_SESSION["username"]; ?></p>
         </header>
         <main>
-            <aside></aside>
+            <aside>
+                <ul>
+                    <li><a href="tienda">Inicio</a></li>
+                    <li><a href="proveedores">Proveedores</a></li>
+                    <li><a href="clientes"></a>Clientes</li>
+                    <li><a href="categorias">Categorias</a></li>
+                    <li><a href="productos">Productos</a></li>
+                    <li><a href="ventas">Ventas</a></li>
+                    
+                </ul>
+            </aside>
             <section>
 
             </section>
