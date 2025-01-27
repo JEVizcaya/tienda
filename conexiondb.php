@@ -1,8 +1,9 @@
 <?php
-$host = "localhost"; // o la IP de tu servidor MySQL
-$user = "tienda";
-$password = "1234";
-$database = "tienda";
+include ("config.php");
+$host = HOST; // o la IP de tu servidor MySQL
+$user = DB_USER;
+$password = DB_PASS;
+$database = DB_DATABASE;
 
 try {
     // Crear la conexión con PDO
