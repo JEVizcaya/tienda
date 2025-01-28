@@ -24,3 +24,14 @@ main aside{
 main section{
     width: 70%;
 }
+
+aside ul{
+    list-style: none;
+}
+aside ul li{
+    margin-top: 10px;
+
+}
+aside lu li i{
+    margin-right: 10px;
+}

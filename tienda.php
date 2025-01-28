@@ -30,20 +30,23 @@ if (isset($_SESSION["username"])) {
         <main>
             <aside>
                 <ul>
-                    <li><a href="tienda">Inicio</a></li>
-                    <li><a href="proveedores">Proveedores</a></li>
-                    <li><a href="clientes"></a>Clientes</li>
-                    <li><a href="categorias">Categorias</a></li>
-                    <li><a href="productos">Productos</a></li>
-                    <li><a href="ventas">Ventas</a></li>
-                    
+                    <li><a href="tienda"><i class="fa-solid fa-store"></i>Inicio</a></li>
+                    <li><a href="proveedores"><i class="fa-solid fa-boxes-packing"></i>Proveedores</a></li>
+                    <li><a href="clientes"><i class="fa-solid fa-user"></i>Clientes</a></li>
+                    <li><a href="categorias"><i class="fa-solid fa-list"></i>Categorias</a></li>
+                    <li><a href="productos"><i class="fa-brands fa-product-hunt"></i>Productos</a></li>
+                    <li><a href="ventas"><i class="fa-brands fa-sellsy"></i>Ventas</a></li>
+
                 </ul>
             </aside>
             <section>
+                
 
             </section>
         </main>
-        <footer></footer>
+        <footer>
+        <p>&copy; 2025 - Todos los derechos reservados</p>
+        </footer>
     </div>
 
 </body>
