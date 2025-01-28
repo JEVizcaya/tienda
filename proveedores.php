@@ -1,24 +1,24 @@
 <?php
 include("partials/cabecera.php");
 //consulta para obtener proveedores
-$sql="select * from proveedores order by id desc";
-$result=$conexion->query($sql);
+$sql = "select * from proveedores order by id desc";
+$result = $conexion->query($sql);
 ?>
 <section>
     <div class="listado">
-    <h1>Proveedores</h1>
-    <table class="table table_striped">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nombre</th>
-                <th>Web</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-        <?php
-                while ($fila = $result->fetchAll()) {
+        <h1>Proveedores</h1>
+        <table class="table table_striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Web</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                while ($fila = $result->fetch(PDO::FETCH_ASSOC)) {
                     echo "<tr>";
                     echo "<td>" . $fila['id'] . "</td>";
                     echo "<td>" . $fila['nombre'] . "</td>";
@@ -27,8 +27,23 @@ $result=$conexion->query($sql);
                     echo "</tr>";
                 }
                 ?>
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+        <hr>
+        <h3>Nuevo Proveedor</h3>
+        <form action="nuevo_proveedor.php" method="post">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" id="nombre" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="web">Web:</label>
+                <input type="text" name="web" id="web" class="form-control">
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-primary">
+            </div>
+        </form>
     </div>
 
 </section>
