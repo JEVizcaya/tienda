@@ -1,18 +1,18 @@
 <?php
 include("partials/cabecera.php");
-//consulta para obtener proveedores
-$sql = "select * from proveedores order by id desc";
+//Consulta para obtener los proveedores
+$sql = "select * from proveedores order by id desc ";
 $result = $conexion->query($sql);
 ?>
 <section>
     <div class="listado">
         <h1>Proveedores</h1>
-        <table class="table table_striped">
+        <table class="table table-striped">
             <thead>
                 <tr>
                     <th>Id</th>
                     <th>Nombre</th>
-                    <th>Web</th>
+                    <th>Web</th>                    
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -34,16 +34,43 @@ $result = $conexion->query($sql);
         <form action="nuevo_proveedor.php" method="post">
             <div class="form-group">
                 <label for="nombre">Nombre:</label>
-                <input type="text" name="nombre" id="nombre" class="form-control">
+                <input type="text" name="nombre" id="nombre" class="form-control" required placeholder="Nombre del proveedor">
             </div>
             <div class="form-group">
                 <label for="web">Web:</label>
-                <input type="text" name="web" id="web" class="form-control">
+                <input type="text" name="web" id="web" class="form-control" required placeholder="http://">
             </div>
             <div class="form-group">
                 <input type="submit" value="Guardar" class="btn btn-primary">
             </div>
         </form>
+        <hr>
+        <?php if(isset($_GET["id"])){ ?>
+        <div class="contacto">
+            <div>
+                <h3>Nueva dirección</h3>
+                <form action="nueva_direccion.php" method="post">
+                    <input type="hidden" name="idproveedro" value="<?php echo $_GET["id"] ?>">
+                    <label for="calle">calle</label>
+                    <input type="text" name="calle" id="calle" required placeholder="Calle">
+                    <label for="numero">Número</label>
+                    <input type="text" name="numero" id="numero" required placeholder="Número"> 
+                    <label for="comuna">Comuna</label>
+                    <input type="text" name="comuna" id="comuna" required placeholder="Comuna">
+                    <label for="ciudad">Ciudad</label>
+                    <input type="text" name="ciudad" id="ciudad" required placeholder="Ciudad">
+                    <input type="submit" value="Guardar">
+                    <input type="reset" value="Cancelar">
+                </form>
+
+            </div>
+            <div>
+                <h3>Nuevo teléfono</h3>
+            </div>
+
+        </div>
+        <?php } ?>
+      
     </div>
 
 </section>
